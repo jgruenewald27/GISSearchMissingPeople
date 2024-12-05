@@ -1,0 +1,2 @@
+Link to the heiBOX containing the data:
+[FOSSGIS_data](https://heibox.uni-heidelberg.de/d/829ebf259ddb4a389165/)

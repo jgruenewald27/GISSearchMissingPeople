@@ -1,66 +1,34 @@
-# GISSearchMissingPeople
-
-# Project Title
-
-GIS Tool to help in the search of missing people
+# Entwicklung einer FOSSGIS-basierten Analyse zur Unterstützung von Such- und Rettungsaktionen
 
 ## Description
 
-The goal of this project is to develop a GIS tool based on FOSSGIS software and open data to assist in the search of missing people. 
+The objective of this project is to develop a QGIS-Workflow (built in the Graphical Modeler) to support search and rescue operations, resulting in a cost distance surface. This indicates the maximum distance the person can move in a given time.
+
+The workflow includes different factors in the analysis, such as the topography, the road infrastructure or the prevailing vegetation. The theoretical basis here is the calculation of a cost surface, which is represented as a final product in a cumulative cost distance surface. Different costs are assigned to the input parameters (CORINE data, OSM data, DEM) and integrated into a variable cost surface on which human mobility behavior can be modeled under the assumption of cost minimization. This allowed to represent maximum spatial distances that can be traveled within certain time intervals. This was tested in two different study areas, on the one hand in Mühlhausen in Kraichgau and on the other hand in the province of Vorarlberg in Austria.
 
 ## Getting Started
 
+* The entire workflow is based on a model using QGIS. The work was done using the current stable QGIS Version 3.28.4 (https://www.qgis.org/de/site/forusers/download.html). A download of this program is necessary to run the developed analysis.
+* Furthermore the following QGIS-Plugin should be installed: SRTM-Downloader
+
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* One needs to create an OpenStreetMap Account at the following website: (https://export.hotosm.org/en/v3/). This is necessary to directly download the data.
+* One needs to create an NASA Earthdata Account to use the QGIS-Plugin SRTM-Downloader and direcly import the DEMs into your project. This can be found under the following link: https://urs.earthdata.nasa.gov//users/new
+* One needs to create an Account at the Copernicus Programm at the following website: https://land.copernicus.eu/pan-european/corine-land-cover/clc2018?tab=download. This is necessary to download the CORINE Land Cover (CLC) Data.
+* The CORINE data is not provided through the heiBOX because of the size of the dataset.
 
-### Installing
+### Data download
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* The provided scripts for filtering the needed OSM data using the ohsome API (optional) and the ORS comparison can be copied into the appropriate field. One can run the scripts using jupyter notebook running within a suitable environment.
+* To download the needed data using the HOT Export Tool one can use the provided YAML code and enter it into the Data section of the Website.
 
-* QGIS
+### Running the model and scripts
 
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+* All the data except CORINE are provided in the following heiBOX Link: https://heibox.uni-heidelberg.de/d/829ebf259ddb4a389165/
+* Select the necessary input parameters to run the model.
+* To run the scripts one can use Anaconda to launch jupyter notebook.
 
 ## Authors
 
-Contributors names and contact info
-
-Johannes Grünewald, Maximilian Schäfer  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+Johannes Grünewald and Maximilian Schäfer

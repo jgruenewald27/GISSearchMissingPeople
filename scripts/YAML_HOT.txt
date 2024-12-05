@@ -1,0 +1,9 @@
+## YAML filtering for HOT Export tool
+## Filtering the following tags for the key 'highway'
+
+highways:
+    types:
+        - lines
+    select:
+        - highway
+    where: highway = 'tertiary' OR highway =  'residential' OR highway = 'service' OR highway = 'track' OR highway =  'path' OR highway  = 'footway' OR highway  = 'steps'
